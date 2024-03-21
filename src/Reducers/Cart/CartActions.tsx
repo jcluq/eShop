@@ -1,8 +1,9 @@
-import { ProductType } from "../Types/ProductType";
+import { ProductType } from "../../Types/ProductType";
 import { ICartItem } from "./CartTypes";
 
 export enum CartActionType {
   AddItem,
+  DecreaseItem,
   RemoveItem,
   ClearCart,
 }
@@ -10,6 +11,11 @@ export enum CartActionType {
 export interface AddItem {
   type: CartActionType.AddItem;
   payload: ICartItem;
+}
+
+export interface DecreaseItem {
+  type: CartActionType.DecreaseItem;
+  payload: ProductType;
 }
 
 export interface RemoveItem {
@@ -21,4 +27,4 @@ export interface ClearCart {
   type: CartActionType.ClearCart;
 }
 
-export type CartActions = AddItem | RemoveItem | ClearCart;
+export type CartActions = AddItem | DecreaseItem | RemoveItem | ClearCart;
