@@ -13,7 +13,7 @@ export default function CartItem(props: { cartItem: ICartItem }) {
   const handleAddItem = () => {
     const cartItem: ICartItem = {
       product: props.cartItem.product,
-      quantity: 1,
+      quantity: 0,
     };
     dispatch(addItem(cartItem));
   };

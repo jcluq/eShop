@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className="title flex  w-1/3 justify-start pl-10 text-center text-2xl">
         <Link to="/">eShop</Link>
       </div>
-      <div className="flex h-[80%] w-1/3  items-center justify-center align-middle">
+      <div className="flex h-[100%] w-1/3  items-center justify-center align-middle">
         <input
           type="text"
           placeholder="Search"
@@ -46,10 +46,10 @@ export default function Navbar() {
           value={search}
         ></input>
         <button
-          className="h-full  rounded-r-full border-l border-neutral-400 bg-white px-2 "
+          className="h-full items-center rounded-r-full border-l border-neutral-400 bg-white px-2 text-center align-middle"
           onClick={handleSearch}
         >
-          &gt;
+          <p className="items-center text-start align-middle text-sm ">&gt;</p>
         </button>
       </div>
       <div className="buttons flex w-1/3 items-center justify-end  gap-5 pr-10">

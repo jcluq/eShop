@@ -15,11 +15,8 @@ export function cartReducer(
 ): ICartState {
   switch (action.type) {
     case CartActionType.AddItem:
-      if (action.payload.quantity === 0) {
-        return { ...state };
-      }
+      var cartState = state.cartItems;
 
-      let cartState = state.cartItems;
       if (cartState.find((elem) => elem.product === action.payload.product)) {
         cartState = cartState.map((ci) => {
           if (ci.product === action.payload.product) {
@@ -30,11 +27,12 @@ export function cartReducer(
 
         return { ...state, cartItems: cartState };
       } else {
-        console.log(action.payload);
-        cartState.push(action.payload);
+        var newCartState = JSON.parse(JSON.stringify(cartState));
+        console.log(newCartState);
+        newCartState.push(action.payload);
+        console.log(newCartState);
+        return { ...state, cartItems: newCartState };
       }
-
-      return { ...state, cartItems: cartState };
 
     case CartActionType.DecreaseItem:
       let decreasedCart = state.cartItems;

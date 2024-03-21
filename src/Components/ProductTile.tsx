@@ -17,13 +17,13 @@ export default function ProductTile(props: { product: ProductType }) {
   };
 
   const handleAddToCart = (event: MouseEvent<HTMLButtonElement>) => {
-    console.log("b");
     const cartItem: ICartItem = {
       product: props.product,
       quantity: productQuantity,
     };
 
     if (productQuantity > 0) {
+      console.log("bang");
       setShowCart(true);
       dispatch(addItem(cartItem));
       setProductQuantity(1);

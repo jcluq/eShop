@@ -16,20 +16,20 @@ export default function Cart() {
     return total;
   };
 
-  console.log(c);
-
   return (
     <div className="  absolute right-0 top-[5%] flex h-[95%] w-2/12 flex-col bg-white">
-      <div className="h-[5%] border-b-2 p-2 text-xl"> Shopping Cart:</div>
-      <div className=" flex h-[73%] flex-col overflow-y-auto">
+      <div className="h-[5%] border-b-2 p-2 align-middle text-xl">
+        Shopping Cart:
+      </div>
+      <div className=" flex h-[80%] flex-col overflow-y-auto">
         {state.cartItems.map((ci) => {
           return <CartItem key={ci.product.id} cartItem={ci} />;
         })}
       </div>
-      <div className="mt-auto flex h-[20%] w-full flex-col bg-slate-200 ">
+      <div className="mt-auto flex h-[25%] w-full flex-col bg-slate-200 ">
         <div className="flex justify-between">
-          <div className="m-3 text-lg"> Total: </div>
-          <div className="m-3 text-lg">{Number(getTotal()).toFixed(2)}€</div>
+          <div className="text-md m-3"> Total: </div>
+          <div className="text-md m-3">{Number(getTotal()).toFixed(2)}€</div>
         </div>
         <div className="flex  w-full flex-col items-center justify-center gap-2">
           <button className=" w-5/6 items-center justify-center rounded-full bg-green-400 p-2">
