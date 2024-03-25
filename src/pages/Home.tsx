@@ -1,10 +1,11 @@
 import React from "react";
+import forntimage from "../images/frontimage.jpg";
 
 export default function Home() {
   return (
     <div className="flex px-20  pt-36 text-center">
       <div className="w-6/12">
-        <h3 className="  pt-32 text-4xl">Welcome to Electronicfied.</h3>
+        <h3 className="   text-4xl">Welcome to Electronicfied.</h3>
         <h3 className="  text-2xl">
           your one-stop destination for the latests electronic trends
         </h3>
@@ -17,7 +18,10 @@ export default function Home() {
           Shop Now
         </button>
       </div>
-      <div className="bg-orange-400 "></div>
+
+      <div className="h-full w-1/2 items-center px-10 align-middle">
+        <img src={forntimage} alt="frontimage" className="rounded-full" />{" "}
+      </div>
     </div>
   );
 }

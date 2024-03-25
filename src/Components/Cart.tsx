@@ -17,8 +17,8 @@ export default function Cart() {
   };
 
   return (
-    <div className="  absolute right-0 top-[5%] flex h-[95%] w-2/12 flex-col bg-white">
-      <div className="h-[5%] border-b-2 p-2 align-middle text-xl">
+    <div className="  absolute right-0 top-[5%] flex h-[95%] w-2/12 flex-col border-l bg-white">
+      <div className="h-[5%] border-b-2 p-2 pb-8 align-middle text-xl">
         Shopping Cart:
       </div>
       <div className=" flex h-[80%] flex-col overflow-y-auto">

@@ -5,6 +5,7 @@ import { addItem } from "../Reducers/Cart/CartReducer";
 import { CartSwitch } from "../App";
 import { Link } from "react-router-dom";
 import { ProductType } from "../Types/ProductType";
+import RatingStars from "./RatingStars";
 
 export default function ProductTile(props: { product: ProductType }) {
   const { dispatch } = useContext(CartContext);
@@ -70,9 +71,12 @@ export default function ProductTile(props: { product: ProductType }) {
         </div>
       </div>
 
-      <div className="flex w-full justify-end pt-2">
+      <div className="flex w-full justify-between pt-2">
+        <div className="w-2/4">
+          <RatingStars rating={props.product.rating.rate} />
+        </div>
         <button
-          className="h-1/12 justify-center rounded-lg bg-green-400 p-1 px-2 text-left align-middle text-xs first-letter:text-center"
+          className="h-1/12  w-2/4 rounded-lg bg-green-400 p-1 px-2  align-middle text-xs first-letter:text-center"
           onClick={handleAddToCart}
         >
           Add To Cart

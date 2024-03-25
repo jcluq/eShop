@@ -9,6 +9,8 @@ import {
 } from "../Reducers/Filter/FilterReducer";
 import { useLocation } from "react-router-dom";
 
+import RatingStars from "./RatingStars";
+
 export default function () {
   const [search, setSearch] = useState("");
 
@@ -235,7 +237,7 @@ export default function () {
         <div className="priceRange flex w-full flex-col">
           <h3 className="font-semibold">Rating:</h3>
           <div className="ml-3 flex flex-col">
-            <div>
+            <div className="flex">
               <input
                 className="mr-2"
                 type="radio"
@@ -244,9 +246,11 @@ export default function () {
                 value="4"
                 onChange={handleRate}
               />
-              <label htmlFor="4">4+</label>
+              <label htmlFor="4" className=" flex align-top">
+                <RatingStars rating={4} />
+              </label>
             </div>
-            <div>
+            <div className="flex">
               <input
                 className="mr-2"
                 type="radio"
@@ -255,9 +259,12 @@ export default function () {
                 value="3"
                 onChange={handleRate}
               />
-              <label htmlFor="3">3+</label>
+              <label htmlFor="3">
+                {" "}
+                <RatingStars rating={3} />
+              </label>
             </div>
-            <div>
+            <div className="flex">
               <input
                 className="mr-2"
                 type="radio"
@@ -266,9 +273,12 @@ export default function () {
                 value="2"
                 onChange={handleRate}
               />
-              <label htmlFor="2">2+</label>
+              <label htmlFor="2">
+                {" "}
+                <RatingStars rating={2} />
+              </label>
             </div>
-            <div>
+            <div className="flex">
               <input
                 className="mr-2"
                 type="radio"
@@ -277,9 +287,12 @@ export default function () {
                 value="1"
                 onChange={handleRate}
               />
-              <label htmlFor="1">1+</label>
+              <label htmlFor="1">
+                {" "}
+                <RatingStars rating={1} />
+              </label>
             </div>
-            <div>
+            <div className="flex">
               <input
                 className="mr-2"
                 type="radio"
@@ -288,7 +301,10 @@ export default function () {
                 value="0"
                 onChange={handleRate}
               />
-              <label htmlFor="0">0+</label>
+              <label htmlFor="0">
+                {" "}
+                <RatingStars rating={0} />
+              </label>
             </div>
           </div>
         </div>
